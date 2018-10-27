@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MikuMikuWorld" GeneratedClassName="MMWSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LayerMaskMax" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">32</Value>
+    </Setting>
+    <Setting Name="Message_WindowResize" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WindowResize</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

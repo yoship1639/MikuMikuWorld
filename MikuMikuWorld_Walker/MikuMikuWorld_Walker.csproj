@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34BD6B5A-0ADE-4662-9ED6-C9B6ACC046E2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MikuMikuWorld</RootNamespace>
+    <AssemblyName>MikuMikuWorld_Walker</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BulletSharp">
+      <HintPath>..\..\..\Dlls\bulletsharp-x64-2.87\Release OpenTK\BulletSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Scripting.2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Scripting, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Scripting.Common.2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.0.0-pre\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.3.0.0-pre\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Rift, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.Rift.1.1.1529.101\lib\net40\OpenTK.Rift.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.3.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.3.0\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.4.2\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.3.0\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BGDrawer.cs" />
+    <Compile Include="BoneVisibleTest.cs" />
+    <Compile Include="ComboBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComboBoxForm.Designer.cs">
+      <DependentUpon>ComboBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\ComboBox.cs" />
+    <Compile Include="Controls\Frame.cs" />
+    <Compile Include="Controls\PictureBox.cs" />
+    <Compile Include="Controls\SelectLabel.cs" />
+    <Compile Include="Controls\SelectWorldFrame.cs" />
+    <Compile Include="Controls\SelectWorldPanel.cs" />
+    <Compile Include="Controls\TextBox2.cs" />
+    <Compile Include="Controls\TextBox.cs" />
+    <Compile Include="GameObjectFactory.cs" />
+    <Compile Include="ColorCollecter.cs" />
+    <Compile Include="Controls\Control.cs" />
+    <Compile Include="Controls\ControlDrawer.cs" />
+    <Compile Include="Controls\Label.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="Debugger.cs" />
+    <Compile Include="Buffer.cs" />
+    <Compile Include="Reward.cs" />
+    <Compile Include="Scripts\Character\CharacterNameResolver.cs" />
+    <Compile Include="Scripts\DummyGameObjectScript.cs" />
+    <Compile Include="Scripts\HUD\Aiming.cs" />
+    <Compile Include="Scripts\HUD\CoinResolver.cs" />
+    <Compile Include="Scripts\HUD\DoFResolver.cs" />
+    <Compile Include="Scripts\HUD\HotBar.cs" />
+    <Compile Include="Scripts\HUD\Icons.cs" />
+    <Compile Include="Scripts\HUD\InventiryResolver.cs" />
+    <Compile Include="Scripts\HUD\LeaveResolver.cs" />
+    <Compile Include="Scripts\HUD\PictureChatResolver.cs" />
+    <Compile Include="Scripts\HUD\PublicArchivementResolver.cs" />
+    <Compile Include="Scripts\HUD\ScriptResolver.cs" />
+    <Compile Include="Lerper.cs" />
+    <Compile Include="Networks\Commands\CmdAllTransform.cs" />
+    <Compile Include="Networks\Commands\CmdLogin.cs" />
+    <Compile Include="Networks\Commands\CmdObjectPicked.cs" />
+    <Compile Include="Networks\Commands\CmdObjectPut.cs" />
+    <Compile Include="Networks\Commands\CmdReceiveUdpPort.cs" />
+    <Compile Include="Networks\ICmd.cs" />
+    <Compile Include="Networks\NetworkUtil.cs" />
+    <Compile Include="Networks\Server.cs" />
+    <Compile Include="PictChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PictChatForm.Designer.cs">
+      <DependentUpon>PictChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PictSaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PictSaveForm.Designer.cs">
+      <DependentUpon>PictSaveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptForm.Designer.cs">
+      <DependentUpon>ScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Character\CharacterPopupResolver.cs" />
+    <Compile Include="Scripts\Character\CharacterTransformResolver.cs" />
+    <Compile Include="Scripts\HUD\MenuResolver.cs" />
+    <Compile Include="Scripts\Player\PlayerCameraController.cs" />
+    <Compile Include="Scripts\Player\PlayerHotbarItemResolver.cs" />
+    <Compile Include="Scripts\Scripting.cs" />
+    <Compile Include="Scripts\Title\HelloWorld.cs" />
+    <Compile Include="Scripts\Title\OptionScript.cs" />
+    <Compile Include="Scripts\Title\ServerEditScript.cs" />
+    <Compile Include="Scripts\WalkerObjectInfo.cs" />
+    <Compile Include="Scripts\World\CoinSpown.cs" />
+    <Compile Include="SimpleDrawableObject.cs" />
+    <Compile Include="Tables.cs" />
+    <Compile Include="TestScripts\BigHead.cs" />
+    <Compile Include="UserData.cs" />
+    <Compile Include="Scripts\AnimationController.cs" />
+    <Compile Include="Scripts\HUD\LogResolver.cs" />
+    <Compile Include="Scripts\Title\SignUpServerScript.cs" />
+    <Compile Include="Scripts\WalkerGameObjectScript.cs" />
+    <Compile Include="Scripts\Title\BackgroundScript.cs" />
+    <Compile Include="Scripts\Character\CharacterInfo.cs" />
+    <Compile Include="Scripts\Title\InitLoading.cs" />
+    <Compile Include="MenuInputResolver.cs" />
+    <Compile Include="ParamChangeTest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyRenderer.cs" />
+    <Compile Include="Controls\TabControl.cs" />
+    <Compile Include="Scripts\Title\LoadingScript.cs" />
+    <Compile Include="Scripts\Title\PlayerSelectScript.cs" />
+    <Compile Include="Controls\TransitControl.cs" />
+    <Compile Include="Scripts\Title\DirectConnectScript.cs" />
+    <Compile Include="Scripts\Player\TestTransform.cs" />
+    <Compile Include="Scripts\Player\PlayerRayResolver.cs" />
+    <Compile Include="Scripts\Player\UdpSender.cs" />
+    <Compile Include="Scripts\Title\ServerInfoScript.cs" />
+    <Compile Include="Scripts\Title\ServerSelectScript.cs" />
+    <Compile Include="Scripts\Title\SetNameScript.cs" />
+    <Compile Include="Scripts\Title\TransitionScript.cs" />
+    <Compile Include="Scripts\Player\PlayerMoveController.cs" />
+    <Compile Include="Scripts\WalkerScript.cs" />
+    <Compile Include="Scripts\HUD\ChatResolver.cs" />
+    <Compile Include="TextInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextInputForm.Designer.cs">
+      <DependentUpon>TextInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTrigger.cs" />
+    <Compile Include="Scripts\Title\StageSelectScript.cs" />
+    <Compile Include="Scripts\Title\TitleScript.cs" />
+    <Compile Include="Transit.cs" />
+    <Compile Include="WorldData.cs" />
+    <Compile Include="WorldResources.cs" />
+    <EmbeddedResource Include="ComboBoxForm.resx">
+      <DependentUpon>ComboBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictChatForm.resx">
+      <DependentUpon>PictChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictSaveForm.resx">
+      <DependentUpon>PictSaveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ScriptForm.resx">
+      <DependentUpon>ScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextInputForm.resx">
+      <DependentUpon>TextInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MikuMikuWorldBase\MikuMikuWorldBase.csproj">
+      <Project>{42049f5f-02b5-45f9-af9a-0de7154c113d}</Project>
+      <Name>MikuMikuWorldBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MikuMikuWorldLib\MikuMikuWorldLib.csproj">
+      <Project>{3f5ec8f3-6d61-4d37-8dcd-316bc1d6b8f3}</Project>
+      <Name>MikuMikuWorldLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MikuMikuWorldScript\MikuMikuWorldScript.csproj">
+      <Project>{6aa755cb-45ed-425b-95c3-3fa2a18f0a22}</Project>
+      <Name>MikuMikuWorldScript</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MikuMikuWorld_WalkerLib\MikuMikuWorld_WalkerLib.csproj">
+      <Project>{e7f3eef2-56fe-4f9a-ad17-cae9123112ad}</Project>
+      <Name>MikuMikuWorld_WalkerLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin_cupper.mwo" />
+    <None Include="Resources\coin_gold.mwo" />
+    <None Include="Resources\coin_silver.mwo" />
+    <None Include="Resources\mmw_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_title_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_walker_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_walker_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_play_offline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_play_online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmw_stage_select.png" />
+    <None Include="Resources\mmw_bg.png" />
+    <None Include="Resources\circle.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\mmw_bg2.png" />
+    <None Include="Resources\icon_key.png" />
+    <None Include="Resources\mmw_defaultbackpanel.png" />
+    <None Include="Resources\icon_connect3.png" />
+    <None Include="Resources\icon_connect.png" />
+    <None Include="Resources\icon_connect2.png" />
+    <None Include="Resources\underline.png" />
+    <None Include="Resources\mmw_icon_coin.png" />
+    <None Include="Resources\number.png" />
+    <None Include="Resources\number3.png" />
+    <None Include="Resources\coin2.wav" />
+    <None Include="Resources\back3.wav" />
+    <None Include="Resources\click7.wav" />
+    <None Include="Resources\select2.wav" />
+    <None Include="Resources\button.wav" />
+    <None Include="Resources\shadowline.png" />
+    <Content Include="Walker.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets" Condition="Exists('..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

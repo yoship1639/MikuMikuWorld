@@ -1,0 +1,62 @@
+Metasequoia Document
+Format Text Ver 1.1
+
+Scene {
+	pos 0.20202824 -0.036732413 8.5265121
+	lookat 0 0 0
+	head -0.4836
+	pich 0.3836
+	bank 0.0000
+	ortho 0
+	zoom2 879.6095
+	amb 0.250 0.250 0.250
+	frontclip 1.2789769
+	backclip 255.79536
+	dirlights 1 {
+		light {
+			dir 0.408 0.408 0.816
+			color 1.000 1.000 1.000
+		}
+	}
+}
+Material 1 {
+	"mat1" shader(3) col(1.000 1.000 1.000 1.000) dif(0.800) amb(0.600) emi(0.000) spc(0.000) power(5.00) tex("brick.png")
+}
+Object "obj1" {
+	depth 0
+	folding 0
+	scale 1 1 1
+	rotation 0 0 0
+	translation 0 0 0
+	visible 15
+	locking 0
+	shading 1
+	facet 59.5
+	color 0.898 0.498 0.698
+	color_type 0
+	vertex 8 {
+		-0.5 0.5 0.5
+		-0.5 -0.5 0.5
+		0.5 0.5 0.5
+		0.5 -0.5 0.5
+		0.5 0.5 -0.5
+		0.5 -0.5 -0.5
+		-0.5 0.5 -0.5
+		-0.5 -0.5 -0.5
+	}
+	face 12 {
+		3 V(0 2 3) M(0) UV(0 0 1 0 1 1)
+		3 V(0 3 1) M(0) UV(0 0 1 1 0 1)
+		3 V(2 4 5) M(0) UV(0 0 1 0 1 1)
+		3 V(2 5 3) M(0) UV(0 0 1 1 0 1)
+		3 V(4 6 7) M(0) UV(0 0 1 0 1 1)
+		3 V(4 7 5) M(0) UV(0 0 1 1 0 1)
+		3 V(6 0 1) M(0) UV(0 0 1 0 1 1)
+		3 V(6 1 7) M(0) UV(0 0 1 1 0 1)
+		3 V(6 4 2) M(0) UV(0 0 1 0 1 1)
+		3 V(6 2 0) M(0) UV(0 0 1 1 0 1)
+		3 V(1 3 5) M(0) UV(0 0 1 0 1 1)
+		3 V(1 5 7) M(0) UV(0 0 1 1 0 1)
+	}
+}
+Eof

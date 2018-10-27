@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB808B23-0EF1-4CFC-AB34-3CA4C2DCE0B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Exporter_MMW</RootNamespace>
+    <AssemblyName>Exporter_MMW</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BulletSharp, Version=2.87.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dlls\bulletsharp-x64-2.87\Release OpenTK\BulletSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.4\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.0.0-pre\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.3.0.0-pre\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Rift, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.Rift.1.1.1529.101\lib\net40\OpenTK.Rift.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CameraController.cs" />
+    <Compile Include="CollisionBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CollisionBox.Designer.cs">
+      <DependentUpon>CollisionBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollisionCapsule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CollisionCapsule.Designer.cs">
+      <DependentUpon>CollisionCapsule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollisionCylinder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CollisionCylinder.Designer.cs">
+      <DependentUpon>CollisionCylinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollisionMesh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CollisionMesh.Designer.cs">
+      <DependentUpon>CollisionMesh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollisionRenderer.cs" />
+    <Compile Include="CollisionSphere.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CollisionSphere.Designer.cs">
+      <DependentUpon>CollisionSphere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorPanel.Designer.cs">
+      <DependentUpon>ColorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="ICollisionShape.cs" />
+    <Compile Include="MainForm_MWC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm_MWC.Designer.cs">
+      <DependentUpon>MainForm_MWC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_MWO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm_MWO.Designer.cs">
+      <DependentUpon>MainForm_MWO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="Slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Slider.Designer.cs">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CollisionBox.resx">
+      <DependentUpon>CollisionBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollisionCapsule.resx">
+      <DependentUpon>CollisionCapsule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollisionCylinder.resx">
+      <DependentUpon>CollisionCylinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollisionMesh.resx">
+      <DependentUpon>CollisionMesh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollisionSphere.resx">
+      <DependentUpon>CollisionSphere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPanel.resx">
+      <DependentUpon>ColorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_MWC.ja.resx">
+      <DependentUpon>MainForm_MWC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_MWC.resx">
+      <DependentUpon>MainForm_MWC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_MWO.ja.resx">
+      <DependentUpon>MainForm_MWO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_MWO.resx">
+      <DependentUpon>MainForm_MWO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Slider.resx">
+      <DependentUpon>Slider.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Property.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MikuMikuWorldBase\MikuMikuWorldBase.csproj">
+      <Project>{42049f5f-02b5-45f9-af9a-0de7154c113d}</Project>
+      <Name>MikuMikuWorldBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MikuMikuWorldLib\MikuMikuWorldLib.csproj">
+      <Project>{3f5ec8f3-6d61-4d37-8dcd-316bc1d6b8f3}</Project>
+      <Name>MikuMikuWorldLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MikuMikuWorldScript\MikuMikuWorldScript.csproj">
+      <Project>{6aa755cb-45ed-425b-95c3-3fa2a18f0a22}</Project>
+      <Name>MikuMikuWorldScript</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets" Condition="Exists('..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenTK.Rift.Windows.1.1.1529.101\build\OpenTK.Rift.Windows.targets'))" />
+  </Target>
+</Project>
